@@ -45,8 +45,6 @@ Source studies (see manuscript Methods section 2.1 and Table 1 for full sample-l
 | QIN-2021 | Somatic embryogenesis (stem vs. callus, two genotypes) | SRR11749594–SRR11749605 |
 | TOLENTINO-2022 | Mechanically induced tension wood | SRR14138141–SRR14138146 |
 
-Raw miRDeep2 pipeline outputs (per-study discovery logs, intermediate FASTA/BED files) are archived separately at [Zenodo/figshare DOI pending] due to file size; the curated, analysis-ready outputs of that pipeline are the files under `data/`.
-
 ## Reproducing the curated data files
 
 All files in `data/` are generated directly from `db/ema_v1.db`:
@@ -54,11 +52,6 @@ All files in `data/` are generated directly from `db/ema_v1.db`:
 ```bash
 bash scripts/export_curated_files.sh
 ```
-
-## Network reconstruction (STRING + Cytoscape)
-
-The full miRNA-target-PPI network (Figure 6 in the manuscript) is built by combining `data/network_edges_mirna_target.csv` with a STRING protein-protein interaction export, processed through `scripts/01_process_string_ppi.py` and `scripts/02_build_network.py`. See the manuscript Methods section 2.9 for STRING query parameters (confidence threshold, interactor settings).
-
 ## License
 
 [PENDING — to be finalized once the target journal/venue is confirmed]
