@@ -1,5 +1,5 @@
 # Eucalyptus MicroRNA Archive (EMA)
-
+![EMA logo](https://raw.githubusercontent.com/jvtarss/ema-dashboard-git/main/public/logo-branca.svg)
 A curated database of microRNAs in *Eucalyptus grandis*, integrating three independent public small RNA sequencing studies (vegetative tissue, somatic embryogenesis, tension wood formation) into a single, locus-resolved catalog with study-level evidence tracking.
 
 **Current release:** v1.0 , with 99 curated miRNAs (31 known, 68 novel), 34 family-level groupings, 1,773 predicted target interactions.
