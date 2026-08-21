@@ -47,13 +47,6 @@ Source studies (see manuscript Methods section 2.1 and Table 1 for full sample-l
 | QIN-2021 | Somatic embryogenesis (stem vs. callus, two genotypes) | SRR11749594–SRR11749605 |
 | TOLENTINO-2022 | Mechanically induced tension wood | SRR14138141–SRR14138146 |
 
-## Reproducing the curated data files
-
-All files in `data/` are generated directly from `db/ema_v1.db`:
-
-```bash
-bash scripts/export_curated_files.sh
-```
 ## License
 
 [PENDING,  to be finalized once the target journal/venue is confirmed]
