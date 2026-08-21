@@ -1,0 +1,79 @@
+#!/bin/bash
+#PBS -N ema_quant_v3
+#PBS -l select=1:ncpus=128:mem=256gb
+#PBS -l walltime=48:00:00
+#PBS -q par128
+#PBS -j oe
+#PBS -o ema_quant_v3.log
+
+source ~/miniconda3/etc/profile.d/conda.sh
+conda activate bioinfo
+export PATH="${HOME}/miniconda3/envs/bioinfo/bin:${PATH}"
+export LD_LIBRARY_PATH="${HOME}/miniconda3/envs/bioinfo/lib:${LD_LIBRARY_PATH}"
+
+cd "${HOME}/mirnaseq-euca/ema-final-v3"
+reads_dir="${HOME}/mirnaseq-euca/trimmed"
+
+n_core=$(($(wc -l < mirna_core.csv) - 1))
+n_mat=$(grep -c '^>' quant_mature.fa)
+if [[ "$n_mat" -ne "$n_core" ]]; then
+    echo "ERRO: referencia de quantificacao (${n_mat}) nao bate com catalogo curado (${n_core})" >&2
+    exit 1
+fi
+echo "Referencia validada: ${n_core} miRNAs"
+
+# ============================================================
+# ETAPA 5 — colapso de reads para as 20 amostras (quantificacao)
+# ============================================================
+mkdir -p quant_tmp
+> config_quant.txt
+> sample_mapping.txt
+tag_n=1
+for gz in "$reads_dir"/*.fastq.gz; do
+    [[ -f "$gz" ]] || continue
+    base=$(basename "$gz")
+    [[ "$base" == *LEVY* ]] && { echo "Ignorando LEVY: $base"; continue; }
+    base_noext=$(basename "$gz" .gz)
+    zcat "$gz" > "quant_tmp/$base_noext"
+    tag=$(printf 's%02d' $tag_n)
+    printf "%s\t%s\n" "quant_tmp/$base_noext" "$tag" >> config_quant.txt
+    printf "%s\t%s\n" "$tag" "${base_noext%_trimmed}" >> sample_mapping.txt
+    ((tag_n++))
+done
+n_samples=$((tag_n - 1))
+echo "Amostras incluidas na quantificacao: ${n_samples}"
+if [[ "$n_samples" -ne 20 ]]; then
+    echo "AVISO: esperado 20 amostras (3 estudos, sem LEVY), obtido ${n_samples}" >&2
+fi
+
+mapper.pl config_quant.txt -d -e -h -i -j -l 18 -m \
+    -s reads_collapsed_all.fa -v -o 128
+rm -rf quant_tmp
+
+# ============================================================
+# ETAPA 6 — quantificacao contra o catalogo final curado (99 miRNAs)
+# ============================================================
+quantifier.pl \
+    -p quant_hairpin.fa \
+    -m quant_mature.fa \
+    -r reads_collapsed_all.fa \
+    -y quant_final
+
+awk 'BEGIN{FS=OFS="\t"}
+     NR==FNR{map[$1]=$2;next}
+     FNR==1{for(i=4;i<=NF;i++) if($i in map) $i=map[$i]; print; next}
+     {print}' \
+    sample_mapping.txt \
+    miRNAs_expressed_all_samples_quant_final.csv \
+    > matriz_raw_counts_v3.tsv
+
+n_matrix_mirnas=$(($(wc -l < matriz_raw_counts_v3.tsv) - 1))
+echo "miRNAs na matriz de contagem final: ${n_matrix_mirnas}"
+if [[ "$n_matrix_mirnas" -ne "$n_core" ]]; then
+    echo "ERRO: matriz de contagem (${n_matrix_mirnas}) nao bate com o catalogo curado (${n_core})" >&2
+    exit 1
+fi
+
+echo "ETAPA 5-6 CONCLUIDA. Matriz de contagem pronta em matriz_raw_counts_v3.tsv"
+echo "sample_mapping.txt:"
+cat sample_mapping.txt

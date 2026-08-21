@@ -1,0 +1,21 @@
+srr_accession,study_id,study_name,doi,title,tissue,genotype,condition,replicate,total_mapped_reads
+SRR11749594,1,QIN-2021,10.1093/g3journal/jkab070,"Genome-wide identification of microRNAs involved in the somatic embryogenesis of Eucalyptus",callus,GL9,,1,13578251
+SRR11749595,1,QIN-2021,10.1093/g3journal/jkab070,"Genome-wide identification of microRNAs involved in the somatic embryogenesis of Eucalyptus",stem,GL9,,3,16073686
+SRR11749596,1,QIN-2021,10.1093/g3journal/jkab070,"Genome-wide identification of microRNAs involved in the somatic embryogenesis of Eucalyptus",stem,GL9,,2,16264504
+SRR11749597,1,QIN-2021,10.1093/g3journal/jkab070,"Genome-wide identification of microRNAs involved in the somatic embryogenesis of Eucalyptus",stem,GL9,,1,13585273
+SRR11749598,1,QIN-2021,10.1093/g3journal/jkab070,"Genome-wide identification of microRNAs involved in the somatic embryogenesis of Eucalyptus",callus,DH201-2,,3,12593516
+SRR11749599,1,QIN-2021,10.1093/g3journal/jkab070,"Genome-wide identification of microRNAs involved in the somatic embryogenesis of Eucalyptus",callus,DH201-2,,2,13304126
+SRR11749600,1,QIN-2021,10.1093/g3journal/jkab070,"Genome-wide identification of microRNAs involved in the somatic embryogenesis of Eucalyptus",callus,DH201-2,,1,12895100
+SRR11749601,1,QIN-2021,10.1093/g3journal/jkab070,"Genome-wide identification of microRNAs involved in the somatic embryogenesis of Eucalyptus",stem,DH201-2,,3,15130611
+SRR11749602,1,QIN-2021,10.1093/g3journal/jkab070,"Genome-wide identification of microRNAs involved in the somatic embryogenesis of Eucalyptus",callus,GL9,,3,14492232
+SRR11749603,1,QIN-2021,10.1093/g3journal/jkab070,"Genome-wide identification of microRNAs involved in the somatic embryogenesis of Eucalyptus",callus,GL9,,2,12434908
+SRR11749604,1,QIN-2021,10.1093/g3journal/jkab070,"Genome-wide identification of microRNAs involved in the somatic embryogenesis of Eucalyptus",stem,DH201-2,,2,14784548
+SRR11749605,1,QIN-2021,10.1093/g3journal/jkab070,"Genome-wide identification of microRNAs involved in the somatic embryogenesis of Eucalyptus",stem,DH201-2,,1,16194801
+SRR14138141,3,TOLENTINO-2022,10.1007/s40626-022-00259-9,"Identification of microRNAs and their expression profiles on tension and opposite wood of Eucalyptus",stem,,tension_wood,1,4951372
+SRR14138142,3,TOLENTINO-2022,10.1007/s40626-022-00259-9,"Identification of microRNAs and their expression profiles on tension and opposite wood of Eucalyptus",stem,,opposite_wood,1,4700293
+SRR14138143,3,TOLENTINO-2022,10.1007/s40626-022-00259-9,"Identification of microRNAs and their expression profiles on tension and opposite wood of Eucalyptus",stem,,unbent_control,1,5619779
+SRR14138144,3,TOLENTINO-2022,10.1007/s40626-022-00259-9,"Identification of microRNAs and their expression profiles on tension and opposite wood of Eucalyptus",stem,,tension_wood,2,5447186
+SRR14138145,3,TOLENTINO-2022,10.1007/s40626-022-00259-9,"Identification of microRNAs and their expression profiles on tension and opposite wood of Eucalyptus",stem,,opposite_wood,2,3710091
+SRR14138146,3,TOLENTINO-2022,10.1007/s40626-022-00259-9,"Identification of microRNAs and their expression profiles on tension and opposite wood of Eucalyptus",stem,,unbent_control,2,4506917
+SRR5433935,4,LIN-2018,,,leaves,,,1,14400854
+SRR5433936,4,LIN-2018,,,stem,,,1,22544199
