@@ -2,9 +2,7 @@
 
 A curated database of microRNAs in *Eucalyptus grandis*, integrating three independent public small RNA sequencing studies (vegetative tissue, somatic embryogenesis, tension wood formation) into a single, locus-resolved catalog with study-level evidence tracking.
 
-**Live dashboard:** https://jvtarss.github.io/ema-dashboard-git
-
-**Current release:** v1.0 — 99 curated miRNAs (31 known, 68 novel), 34 family-level groupings, 1,773 predicted target interactions.
+**Current release:** v1.0 , with 99 curated miRNAs (31 known, 68 novel), 34 family-level groupings, 1,773 predicted target interactions.
 
 ## Citation
 
