@@ -8,7 +8,7 @@ A curated database of microRNAs in *Eucalyptus grandis*, integrating three indep
 
 If you use EMA in your research, please cite:
 
-> [FULL CITATION PENDING — add once published]
+> [FULL CITATION PENDING,  add once published]
 
 ## Repository structure
 
@@ -54,7 +54,7 @@ bash scripts/export_curated_files.sh
 ```
 ## License
 
-[PENDING — to be finalized once the target journal/venue is confirmed]
+[PENDING,  to be finalized once the target journal/venue is confirmed]
 
 ## Contact
 
