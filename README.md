@@ -10,7 +10,7 @@ A curated database of microRNAs in *Eucalyptus grandis*, integrating three indep
 
 If you use EMA in your research, please cite:
 
-> [FULL CITATION PENDING,  add once published]
+> [FULL CITATION PENDING,  to be added once published]
 
 ## Repository structure
 
